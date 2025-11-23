@@ -48,6 +48,7 @@ class ModuleManager extends BaseModule {
   // Chain names -> module paths map
   DEFAULT_MODULE_PATHS = {
     BTC: './bitcoin',
+    BLK: './blackcoin',
     ETH: './ethereum',
     MATIC: './matic',
     BCH: './bitcoin-cash',

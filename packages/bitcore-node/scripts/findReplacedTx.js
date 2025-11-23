@@ -6,7 +6,7 @@ const { TransactionStorage } = require('../build/src/models/transaction');
 function usage(errMsg) {
   console.log('USAGE: ./findReplacedTx.js <options>');
   console.log('OPTIONS:');
-  console.log('  --chain <value>      REQUIRED - e.g. BTC, BCH, DOGE, LTC...');
+  console.log('  --chain <value>      REQUIRED - e.g. BTC, BLK, BCH, DOGE, LTC...');
   console.log('  --network <value>    REQUIRED - e.g. mainnet, testnet3, regtest...');
   console.log('  --txid <value>       REQUIRED Transaction Id that replaced');
   console.log('  --window [value]     Minutes to look back (default: 10)')

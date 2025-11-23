@@ -8,7 +8,7 @@
   <br>
  <img src="https://circleci.com/gh/bitpay/bitcore.svg?style=shield" alt="master build">
 </p>
-  
+
 **Infrastructure to build Bitcoin and blockchain-based applications for the next generation of financial technology.**
 
 ## Applications
@@ -23,11 +23,13 @@
 ## Libraries
 
 - [Bitcore Lib](packages/bitcore-lib) - A powerful JavaScript library for Bitcoin
+- [Bitcore Lib Blackcoin](packages/bitcore-lib-blk) - A powerful JavaScript library for Blackcoin
 - [Bitcore Lib Cash](packages/bitcore-lib-cash) - A powerful JavaScript library for Bitcoin Cash
 - [Bitcore Lib Doge](packages/bitcore-lib-doge) - A powerful JavaScript library for Dogecoin
 - [Bitcore Lib Litecoin](packages/bitcore-lib-ltc) - A powerful JavaScript library for Litecoin
 - [Bitcore Mnemonic](packages/bitcore-mnemonic) - Implements mnemonic code for generating deterministic keys
 - [Bitcore P2P](packages/bitcore-p2p) - The peer-to-peer networking protocol for Bitcoin
+- [Bitcore P2P Blackcoin](packages/bitcore-p2p-blk) - The peer-to-peer networking protocol for Blackcoin
 - [Bitcore P2P Cash](packages/bitcore-p2p-cash) - The peer-to-peer networking protocol for Bitcoin Cash
 - [Bitcore P2P Doge](packages/bitcore-p2p-doge) **DEPRECATED**[^1] - The peer-to-peer networking protocol for Dogecoin
 - [Crypto Wallet Core](packages/crypto-wallet-core) - A coin-agnostic wallet library for creating transactions, signing, and address derivation

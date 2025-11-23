@@ -12,7 +12,7 @@ const rl = require('readline').createInterface({ input: process.stdin, output: p
 function usage(errMsg) {
   console.log('USAGE: ./addGenesisBlock.js [options]');
   console.log('OPTIONS:');
-  console.log('  --chain <value>      BTC, BCH, DOGE, or LTC');
+  console.log('  --chain <value>      BTC, BLK, BCH, DOGE, or LTC');
   console.log('  --network <value>    mainnet, testnet, or regtest');
   console.log('  --real               Write the change to the db. If not given, will only do a dry run');
   if (errMsg) {
@@ -29,7 +29,7 @@ if (args.includes('--help') || args.includes('-h')) {
 const chain = args[args.indexOf('--chain') + 1];
 const network = args[args.indexOf('--network') + 1];
 
-if (!['BTC', 'BCH', 'DOGE', 'LTC'].includes(chain) || !['mainnet', 'testnet', 'regtest'].includes(network)) {
+if (!['BTC', 'BLK', 'BCH', 'DOGE', 'LTC'].includes(chain) || !['mainnet', 'testnet', 'regtest'].includes(network)) {
   usage('Invalid chain and/or network param(s).');
 }
 
@@ -63,7 +63,7 @@ Storage.start()
       }
     });
     const genesisBlock = await p2pWorker.getBlock(blockOne.previousBlockHash);
-    
+
     console.log('\nGenesis block:', genesisBlock.hash);
     const ans = await new Promise(r => rl.question(`${real ? '' : 'DRY RUN: '}Do you want to continue? (y/N): `, r));
     if (ans?.toLowerCase() !== 'y') {

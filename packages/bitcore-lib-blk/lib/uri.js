@@ -9,8 +9,8 @@ var Unit = require('./unit');
 /**
  * Bitcore URI
  *
- * Instantiate an URI from a bitcoin URI String or an Object. An URI instance
- * can be created with a bitcoin uri string or an object. All instances of
+ * Instantiate an URI from a blackcoin URI String or an Object. An URI instance
+ * can be created with a blackcoin uri string or an object. All instances of
  * URI are valid, the static method isValid allows checking before instantiation.
  *
  * All standard parameters can be found as members of the class, the address
@@ -20,13 +20,13 @@ var Unit = require('./unit');
  * @example
  * ```javascript
  *
- * var uri = new URI('bitcoin:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2');
+ * var uri = new URI('blackcoin:BEq96Fg8hw1t2yCKk5pYH8HjQyM6oxpJSV?amount=1.2');
  * console.log(uri.address, uri.amount);
  * ```
  *
- * @param {string|Object} data - A bitcoin URI string or an Object
+ * @param {string|Object} data - A blackcoin URI string or an Object
  * @param {Array.<string>=} knownParams - Required non-standard params
- * @throws {TypeError} Invalid bitcoin address
+ * @throws {TypeError} Invalid blackcoin address
  * @throws {TypeError} Invalid amount
  * @throws {Error} Unknown required argument
  * @returns {URI} A new valid and frozen instance of URI
@@ -83,11 +83,11 @@ URI.fromObject = function fromObject(json) {
  * @example
  * ```javascript
  *
- * var valid = URI.isValid('bitcoin:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu');
+ * var valid = URI.isValid('blackcoin:BEq96Fg8hw1t2yCKk5pYH8HjQyM6oxpJSV');
  * // true
  * ```
  *
- * @param {string|Object} data - A bitcoin URI string or an Object
+ * @param {string|Object} data - A blackcoin URI string or an Object
  * @param {Array.<string>=} knownParams - Required non-standard params
  * @returns {boolean} Result of uri validation
  */
@@ -103,15 +103,15 @@ URI.isValid = function(arg, knownParams) {
 /**
  * Convert a bitcoin URI string into a simple object.
  *
- * @param {string} uri - A bitcoin URI string
- * @throws {TypeError} Invalid bitcoin URI
+ * @param {string} uri - A blackcoin URI string
+ * @throws {TypeError} Invalid blackcoin URI
  * @returns {Object} An object with the parsed params
  */
 URI.parse = function(uri) {
   var info = URL.parse(uri, true);
 
-  if (info.protocol !== 'bitcoin:') {
-    throw new TypeError('Invalid bitcoin URI');
+  if (info.protocol !== 'blackcoin:') {
+    throw new TypeError('Invalid blackcoin URI');
   }
 
   // workaround to host insensitiveness
@@ -186,7 +186,7 @@ URI.prototype.toObject = URI.prototype.toJSON = function toObject() {
 /**
  * Will return a the string representation of the URI
  *
- * @returns {string} Bitcoin URI string
+ * @returns {string} Blackcoin URI string
  */
 URI.prototype.toString = function() {
   var query = {};
@@ -205,7 +205,7 @@ URI.prototype.toString = function() {
   _.extend(query, this.extras);
 
   return URL.format({
-    protocol: 'bitcoin:',
+    protocol: 'blackcoin:',
     host: this.address,
     query: query
   });

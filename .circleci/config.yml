@@ -59,7 +59,7 @@ commands:
     parameters:
       package:
         type: string
-    steps:    
+    steps:
       - attach_workspace:
           at: ~/bitcore
       - use_node
@@ -103,12 +103,14 @@ jobs:
             - packages/bitcore-build/node_modules
             - packages/bitcore-client/node_modules
             - packages/bitcore-lib/node_modules
+            - packages/bitcore-lib-blk/node_modules
             - packages/bitcore-lib-cash/node_modules
             - packages/bitcore-lib-doge/node_modules
             - packages/bitcore-lib-ltc/node_modules
             - packages/bitcore-mnemonic/node_modules
             - packages/bitcore-node/node_modules
             - packages/bitcore-p2p/node_modules
+            - packages/bitcore-p2p-blk/node_modules
             - packages/bitcore-p2p-cash/node_modules
             - packages/bitcore-p2p-doge/node_modules
             - packages/bitcore-tss/node_modules
@@ -128,7 +130,7 @@ jobs:
           package: bitcore-node
   bitcore-wallet-service:
     executor: main
-    steps:    
+    steps:
       - run_test:
           package: bitcore-wallet-service
   bitcore-wallet-client:
@@ -151,6 +153,11 @@ jobs:
     steps:
       - run_test:
           package: bitcore-lib
+  bitcore-lib:
+    executor: main
+    steps:
+      - run_test:
+          package: bitcore-lib-blk
   bitcore-lib-cash:
     executor: main
     steps:
@@ -186,7 +193,7 @@ jobs:
     steps:
       - run_test:
           package: bitcore-tss
-      
+
 workflows:
   version: 2
   build_and_test:
@@ -205,6 +212,9 @@ workflows:
           requires:
             - build
       - bitcore-lib:
+          requires:
+            - build
+      - bitcore-lib-blk:
           requires:
             - build
       - bitcore-lib-cash:

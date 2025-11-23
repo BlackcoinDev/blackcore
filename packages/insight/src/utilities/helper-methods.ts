@@ -8,6 +8,7 @@ import {
 } from './constants';
 import {BlockTransactionDetails} from './models';
 import BitcoreLib from 'bitcore-lib';
+import BitcoreLibBlk from 'bitcore-lib-blk';
 import BitcoreLibCash from 'bitcore-lib-cash';
 import BitcoreLibDoge from 'bitcore-lib-doge';
 import BitcoreLibLtc from 'bitcore-lib-ltc';

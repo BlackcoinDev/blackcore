@@ -8,7 +8,7 @@ const { wait } = require('../build/src/utils');
 function usage(errMsg) {
   console.log('USAGE: ./migrateTestnetWallets.js [options]');
   console.log('OPTIONS:');
-  console.log('  --chain <value>         REQUIRED - e.g. BTC, BCH, DOGE, LTC...');
+  console.log('  --chain <value>         REQUIRED - e.g. BTC, BLK, BCH, DOGE, LTC...');
   console.log('  --oldNetwork <value>    REQUIRED - e.g. testnet3');
   console.log('  --newNetwork <value>    REQUIRED - e.g. testnet4');
   console.log('  --batchSize <value>     Number of documents to update at a time. Default: 10000');

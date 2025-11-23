@@ -10,7 +10,7 @@ const { wait } = require('../build/src/utils');
 function usage(errMsg) {
   console.log('USAGE: ./purgeNetworkData.js [options');
   console.log('OPTIONS:');
-  console.log('  --chain <value>      REQUIRED - e.g. BTC, BCH, DOGE, LTC...');
+  console.log('  --chain <value>      REQUIRED - e.g. BTC, BLK, BCH, DOGE, LTC...');
   console.log('  --network <value>    REQUIRED - e.g. mainnet, testnet3, regtest...');
   console.log('  --limit <value>      Number of documents to delete at a time. Default: 250');
   console.log('  --sleep <value>      Sleep time in milliseconds between deletions. Default: 50');

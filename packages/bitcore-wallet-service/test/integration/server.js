@@ -23,6 +23,7 @@ config.moralis = config.moralis ?? {
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
+  blk: require('bitcore-lib-blk'),
   bch: require('bitcore-lib-cash'),
   eth: Bitcore,
   xrp: Bitcore,

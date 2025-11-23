@@ -4,6 +4,7 @@ import * as System from '@solana-program/system';
 import * as Token from '@solana-program/token';
 import * as SolKit from '@solana/kit';
 import * as BitcoreLib from 'bitcore-lib';
+import * as BitcoreLibBlk from 'bitcore-lib-blk';
 import * as BitcoreLibCash from 'bitcore-lib-cash';
 import * as BitcoreLibDoge from 'bitcore-lib-doge';
 import * as BitcoreLibLtc from 'bitcore-lib-ltc';
@@ -24,6 +25,7 @@ const SolanaProgram = {
 }
 export {
   BitcoreLib,
+  BitcoreLibBlk,
   BitcoreLibCash,
   BitcoreLibDoge,
   BitcoreLibLtc,
