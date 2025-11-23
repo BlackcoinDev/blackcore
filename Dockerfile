@@ -41,6 +41,9 @@ COPY  ./packages/bitcore-lib-cash/package-lock.json ./packages/bitcore-lib-cash/
 COPY  ./packages/bitcore-lib/package.json ./packages/bitcore-lib/package.json
 COPY  ./packages/bitcore-lib/package-lock.json ./packages/bitcore-lib/package-lock.json
 
+COPY  ./packages/bitcore-lib-blk/package.json ./packages/bitcore-lib-blk/package.json
+COPY  ./packages/bitcore-lib-blk/package-lock.json ./packages/bitcore-lib-blk/package-lock.json
+
 COPY  ./packages/bitcore-mnemonic/package.json ./packages/bitcore-mnemonic/package.json
 COPY  ./packages/bitcore-mnemonic/package-lock.json ./packages/bitcore-mnemonic/package-lock.json
 
@@ -52,6 +55,9 @@ COPY  ./packages/bitcore-p2p-cash/package-lock.json ./packages/bitcore-p2p-cash/
 
 COPY  ./packages/bitcore-p2p/package.json ./packages/bitcore-p2p/package.json
 COPY  ./packages/bitcore-p2p/package-lock.json ./packages/bitcore-p2p/package-lock.json
+
+COPY  ./packages/bitcore-p2p-blk/package.json ./packages/bitcore-p2p-blk/package.json
+COPY  ./packages/bitcore-p2p-blk/package-lock.json ./packages/bitcore-p2p-blk/package-lock.json
 
 COPY  ./packages/bitcore-wallet-client/package.json ./packages/bitcore-wallet-client/package.json
 COPY  ./packages/bitcore-wallet-client/package-lock.json ./packages/bitcore-wallet-client/package-lock.json

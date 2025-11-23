@@ -166,21 +166,17 @@ addNetwork({
   name: 'livenet',
   alias: 'mainnet',
   is,
-  pubkeyhash: 0x00,
-  privatekey: 0x80,
-  scripthash: 0x05,
-  bech32prefix: 'bc',
+  pubkeyhash: 0x19,
+  privatekey: 0x99,
+  scripthash: 0x55,
+  bech32prefix: 'blk',
   xpubkey: 0x0488b21e,
   xprivkey: 0x0488ade4,
-  networkMagic: 0xf9beb4d9,
-  port: 8333,
+  networkMagic: 0x70352205,
+  port: 15714,
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
+    'dnsseed.blackcoin.nl',
+    'dnsseed2.blackcoin.nl'
   ]
 });
 
@@ -197,54 +193,28 @@ addNetwork({
   pubkeyhash: 0x6f,
   privatekey: 0xef,
   scripthash: 0xc4,
-  bech32prefix: 'tb',
+  bech32prefix: 'tblk',
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
-  variants: [{
-    name: 'testnet3',
-    networkMagic: 0x0b110907,
-    port: 18333,
-    dnsSeeds: [
-      'testnet-seed.bitcoin.petertodd.org',
-      'testnet-seed.bluematt.me',
-      'testnet-seed.alexykot.me',
-      'testnet-seed.bitcoin.schildbach.de'
-    ]
-  }, {
-    name: 'signet',
-    networkMagic: 0x0a03cf40,
-    port: 38333,
-    dnsSeeds: [
-      '178.128.221.177',
-      '103.16.128.63',
-      '153.126.143.201',
-      '192.241.163.142'
-    ]
-  }, {
-    name: 'testnet4',
-    networkMagic: 0x1c163f28,
-    port: 48333,
-    dnsSeeds: [
-      '18.189.156.102',
-      '18.201.207.55',
-      '51.158.248.8',
-      '57.128.176.163',
-      '82.67.102.15',
-      '88.99.248.50',
-      '95.217.73.162',
-      '103.99.171.212',
-      '103.165.192.210',
-    ]
-  }]
+  networkMagic: 0xcdf2c0ef,
+  port: 25714,
+  dnsSeeds: [
+    'dnsseed.blackcoin.nl',
+    'dnsseed2.blackcoin.nl'
+  ]
 });
+
+/**
+ * @instance
+ * @member Networks#livenet
+ */
+var livenet = get('livenet');
 
 /**
  * @instance
  * @member Networks#testnet
  */
 var testnet = get('testnet');
-var testnet3 = get('testnet3');
-var signet = get('signet');
 
 addNetwork({
   name: 'regtest',
@@ -253,11 +223,11 @@ addNetwork({
   pubkeyhash: 0x6f,
   privatekey: 0xef,
   scripthash: 0xc4,
-  bech32prefix: 'bcrt',
+  bech32prefix: 'blrt',
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
-  networkMagic: 0xfabfb5da,
-  port: 18444,
+  networkMagic: 0x06223570,
+  port: 35714,
   dnsSeeds: []
 });
 
@@ -297,8 +267,6 @@ module.exports = {
   livenet: livenet,
   mainnet: livenet,
   testnet: testnet,
-  testnet3: testnet3,
-  signet: signet,
   regtest: regtest,
   get: get,
   enableRegtest: enableRegtest,

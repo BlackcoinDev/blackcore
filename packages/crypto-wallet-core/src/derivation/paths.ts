@@ -9,6 +9,9 @@ export const Paths = {
     livenet: "m/44'/145'/",
     default: "m/44'/1'/"
   },
+  BLK: {
+    default: "m/44'/10'/"
+  },
   ETH: {
     default: "m/44'/60'/"
   },

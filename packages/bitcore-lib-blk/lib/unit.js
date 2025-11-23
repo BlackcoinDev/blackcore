@@ -14,7 +14,7 @@ var UNITS = {
 };
 
 /**
- * Utility for handling and converting bitcoins units. The supported units are
+ * Utility for handling and converting blackcoins units. The supported units are
  * BTC, mBTC, bits (also named uBTC) and satoshis. A unit instance can be created with an
  * amount and a unit code, or alternatively using static methods like {fromBTC}.
  * It also allows to be created from a fiat amount and the exchange rate, or

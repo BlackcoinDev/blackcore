@@ -111,6 +111,23 @@
           ]
         }
       },
+      "BLK": {
+        "testnet": {
+          "chainSource": "p2p",
+          "trustedPeers": [
+            {
+              "host": "192.168.0.204",
+              "port": 25714
+            }
+          ],
+          "rpc": {
+            "host": "192.168.0.204",
+            "port": 25715,
+            "username": "blackcoin",
+            "password": "blackcoin"
+          }
+        }
+      },
       "XRP": {
         "testnet": {
           "chainSource": "rpc",

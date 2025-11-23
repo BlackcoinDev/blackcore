@@ -1,6 +1,7 @@
 import { ArbValidation } from './arb';
 import { BaseValidation } from './base';
 import { BchValidation } from './bch';
+import { BlkValidation } from './blk';
 import { BtcValidation } from './btc';
 import { DogeValidation } from './doge';
 import { EthValidation } from './eth';
@@ -18,6 +19,7 @@ export interface IValidation {
 const validation: { [chain: string]: IValidation } = {
   BTC: new BtcValidation(),
   BCH: new BchValidation(),
+  BLK: new BlkValidation(),
   ETH: new EthValidation(),
   XRP: new XrpValidation(),
   DOGE: new DogeValidation(),

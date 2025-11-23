@@ -57,6 +57,7 @@ const EmailValidator = require('email-validator');
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
+  blk: require('bitcore-lib-blk'),
   bch: require('bitcore-lib-cash'),
   eth: Bitcore,
   matic: Bitcore,
@@ -2656,7 +2657,7 @@ export class WalletService implements IWalletService {
                 },
                 async next => {
                   // SOL is skipped since its a non necessary field that is expected to be provided by the client.
-                  if (!opts.nonce && !Constants.SVM_CHAINS[wallet.chain.toUpperCase()]) { 
+                  if (!opts.nonce && !Constants.SVM_CHAINS[wallet.chain.toUpperCase()]) {
                     try {
                       opts.nonce = await ChainService.getTransactionCount(this, wallet, opts.from);
                     } catch (error) {
@@ -2666,7 +2667,7 @@ export class WalletService implements IWalletService {
                   return next();
                 },
                 async next => {
-                  if (Constants.SVM_CHAINS[wallet.chain.toUpperCase()] && !opts.nonceAddress) { 
+                  if (Constants.SVM_CHAINS[wallet.chain.toUpperCase()] && !opts.nonceAddress) {
                     this._getBlockchainHeight(wallet.chain, wallet.network, (err, height, hash) => {
                       if (err) return next(err);
                       opts.blockHeight = height;
@@ -3177,7 +3178,7 @@ export class WalletService implements IWalletService {
               return cb(err);
             }
           }
-          
+
 
           const copayer = wallet.getCopayer(this.copayerId);
 
@@ -3794,11 +3795,11 @@ export class WalletService implements IWalletService {
   /**
    * Syncs wallet regitration and address with a V8 type blockexplorerer
    * @param {Wallet} wallet
-   * @param {Function} cb 
+   * @param {Function} cb
    * @param {Boolean} skipCheck (optional) skip verification step
    * @param {Number} count (optional) counter for recursive calls
    * @param {Boolean} force (optional) force a re-sync
-   * @returns 
+   * @returns
    */
   syncWallet(wallet, cb, skipCheck?, count?, force?) {
     count = count || 0;
@@ -5124,7 +5125,7 @@ export class WalletService implements IWalletService {
               const spendersList = data?.body?.result;
 
               if (Array.isArray(spendersList)) {
-                const spenderData = spendersList.find(s => 
+                const spenderData = spendersList.find(s =>
                   s.spender?.address?.toLowerCase() === spenderAddress.toLowerCase() &&
                   s.token?.address?.toLowerCase() === address.toLowerCase()
                 );

@@ -13,6 +13,11 @@ declare module 'bitcore-lib' {
     export default index;
 }
 
+declare module 'bitcore-lib-blk' {
+    const index: any;
+    export default index;
+}
+
 declare module 'bitcore-lib-cash' {
     const index: any;
     export default index;

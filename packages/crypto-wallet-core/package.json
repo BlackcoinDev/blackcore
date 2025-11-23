@@ -29,6 +29,7 @@
     "@solana-program/token": "^0.5.1",
     "@solana/kit": "^2.1.0",
     "bitcore-lib": "^10.10.7",
+    "bitcore-lib-blk": "^10.10.7",
     "bitcore-lib-cash": "^10.10.5",
     "bitcore-lib-doge": "^10.10.5",
     "bitcore-lib-ltc": "^10.10.5",

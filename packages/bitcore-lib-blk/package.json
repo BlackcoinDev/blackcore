@@ -1,7 +1,7 @@
 {
   "name": "bitcore-lib-blk",
   "version": "10.10.7",
-  "description": "A pure and powerful JavaScript Bitcoin library.",
+  "description": "A pure and powerful JavaScript Blackcoin library.",
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
   "scripts": {
@@ -12,20 +12,23 @@
     "pub": "npm run build && npm publish"
   },
   "keywords": [
-    "bitcoin",
+    "blackcoin",
     "transaction",
     "address",
     "p2p",
     "ecies",
     "cryptocurrency",
     "blockchain",
+    "BLK",
     "payment",
     "bip21",
     "bip32",
     "bip37",
     "bip69",
     "bip70",
-    "multisig"
+    "pos",
+    "multisig",
+    "staking"
   ],
   "repository": {
     "type": "git",

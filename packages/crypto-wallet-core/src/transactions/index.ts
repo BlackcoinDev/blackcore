@@ -7,6 +7,7 @@ import {
   BASETxProvider
 } from './base';
 import { BCHTxProvider } from './bch';
+import { BLKTxProvider } from './blk';
 import { BTCTxProvider } from './btc';
 import { DOGETxProvider } from './doge';
 import { ERC20TxProvider } from './erc20';
@@ -26,6 +27,7 @@ import { XRPTxProvider } from './xrp';
 const providers = {
   BTC: new BTCTxProvider(),
   BCH: new BCHTxProvider(),
+  BLK: new BLKTxProvider(),
   ETH: new ETHTxProvider(),
   ETHERC20: new ERC20TxProvider(),
   ETHMULTISIG: new ETHMULTISIGTxProvider(),

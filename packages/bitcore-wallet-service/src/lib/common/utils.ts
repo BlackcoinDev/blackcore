@@ -11,6 +11,7 @@ const secp256k1 = require('secp256k1');
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
+  blk: require('bitcore-lib-blk'),
   bch: require('bitcore-lib-cash'),
   doge: require('bitcore-lib-doge'),
   ltc: require('bitcore-lib-ltc')
@@ -34,7 +35,7 @@ export const Utils = {
 
   /**
    * Same as isNumber(), but also allows BigInts
-   * @param val 
+   * @param val
    * @returns {boolean}
    */
   isNumberish(val) {
@@ -348,7 +349,7 @@ export const Utils = {
    * @param {Array<any>} arr Array to be sorted
    * @param {...string|Array<string>} keys Keys to sort by in order. If a key is an array, it will be treated as a nested key.
    *  e.g.: sortAsc(arr, 'a', 'b', ['c', 'd']) will sort by a, then b, then c.d
-   * @returns 
+   * @returns
    */
   sortAsc(arr, ...keys) {
     function transformVals(val1, val2) {
@@ -413,7 +414,7 @@ export const Utils = {
    * Returns the elements of arr1 that are NOT in arr2
    * @param {Array<any>} arr1 Elements to filter
    * @param {Array<any>} [arr2] Elements to remove from arr1 if they exist. If not provided, returns a copy of arr1.
-   * @returns 
+   * @returns
    */
   difference(arr1, arr2) {
     if (!Array.isArray(arr1)) return [];

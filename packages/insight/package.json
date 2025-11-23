@@ -29,6 +29,7 @@
     "assert": "2.1.0",
     "axios": "1.7.9",
     "bitcore-lib": "^10.0.23",
+    "bitcore-lib-blk": "^10.10.7",
     "bitcore-lib-cash": "^10.0.23",
     "bitcore-lib-doge": "^10.0.21",
     "bitcore-lib-ltc": "^10.0.21",

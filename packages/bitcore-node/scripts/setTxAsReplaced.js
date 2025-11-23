@@ -7,7 +7,7 @@ const { SpentHeightIndicators } = require('../build/src/types/Coin');
 function usage(errMsg) {
   console.log('USAGE: ./setTxAsReplaced.js <txid> <replacementTxid> [options]');
   console.log('OPTIONS:');
-  console.log('  --chain <value>      BTC, BCH, DOGE, or LTC');
+  console.log('  --chain <value>      BTC, BLK, BCH, DOGE, or LTC');
   console.log('  --network <value>    mainnet, testnet, or regtest');
   console.log('  --real               Write the change to the db. If not given, will only do a dry run');
   console.log('  --force              Force the overwrite of an existing replacedByTxid field');
@@ -35,7 +35,7 @@ const [txid, replacementTxid] = args;
 const chain = args[args.indexOf('--chain') + 1];
 const network = args[args.indexOf('--network') + 1];
 
-if (!['BTC', 'BCH', 'DOGE', 'LTC'].includes(chain) || !['mainnet', 'testnet', 'regtest'].includes(network)) {
+if (!['BTC', 'BLK', 'BCH', 'DOGE', 'LTC'].includes(chain) || !['mainnet', 'testnet', 'regtest'].includes(network)) {
   usage('Invalid chain and/or network param(s).');
 }
 
@@ -49,7 +49,7 @@ Storage.start()
       console.log('No tx found for txid.');
       return;
     }
-    
+
     if (tx.replacedByTxid) {
       console.log('Tx already has replacement txid: ' + tx.replacedByTxid);
       if (!force) {
@@ -62,7 +62,7 @@ Storage.start()
       console.log('Replacement tx not found for replacementTxid');
       return;
     }
-    
+
     if (real) {
       const res = await TransactionStorage.collection.updateOne(
         { chain, network, txid },

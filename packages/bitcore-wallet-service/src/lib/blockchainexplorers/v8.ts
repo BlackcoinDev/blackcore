@@ -13,6 +13,7 @@ const $ = require('preconditions').singleton();
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
+  blk: require('bitcore-lib-blk'),
   bch: require('bitcore-lib-cash'),
   eth: Bitcore,
   matic: Bitcore,

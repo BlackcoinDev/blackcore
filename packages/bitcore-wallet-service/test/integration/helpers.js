@@ -19,6 +19,7 @@ var config = require('../test-config');
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
+  blk: require('bitcore-lib-blk'),
   bch: require('bitcore-lib-cash'),
   doge: require('bitcore-lib-doge'),
   ltc: require('bitcore-lib-ltc')
